@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Aprovação do Aluno</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 20px; background-color: #f0f4f8; color: #333; display: flex; justify-content: center; align-items: center; min-height: 95vh; }
+        .container { background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 100%; max-width: 420px; }
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 25px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        input[type="number"] { width: calc(100% - 22px); padding: 10px; margin-bottom: 20px; border: 1px solid #bdc3c7; border-radius: 4px; box-sizing: border-box; font-size: 1rem; }
+        input[type="number"]:focus { border-color: #3498db; box-shadow: 0 0 0 0.2rem rgba(52,152,219,.25); outline: none; }
+        button { background-color: #3498db; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 1.05rem; width: 100%; transition: background-color 0.3s ease; }
+        button:hover { background-color: #2980b9; }
+        .error-message { color: #e74c3c; background-color: #fdecea; border: 1px solid #e74c3c; padding: 10px; border-radius: 4px; margin-bottom: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verificar Aprovação</h1>
+
+        <% if (typeof erro !== 'undefined' && erro) { %>
+            <div class="error-message"><%= erro %></div>
+        <% } %>
+
+        <form action="/calcular-media" method="POST">
+            <div>
+                <label for="nota1">Nota 1 (0 a 10):</label>
+                <input type="number" id="nota1" name="nota1" step="0.1" min="0" max="10" required
+                       value="<%= typeof nota1 !== 'undefined' ? nota1 : '' %>">
+            </div>
+            <div>
+                <label for="nota2">Nota 2 (0 a 10):</label>
+                <input type="number" id="nota2" name="nota2" step="0.1" min="0" max="10" required
+                       value="<%= typeof nota2 !== 'undefined' ? nota2 : '' %>">
+            </div>
+            <div>
+                <label for="nota3">Nota 3 (0 a 10):</label>
+                <input type="number" id="nota3" name="nota3" step="0.1" min="0" max="10" required
+                       value="<%= typeof nota3 !== 'undefined' ? nota3 : '' %>">
+            </div>
+            <button type="submit">Calcular Média e Verificar</button>
+        </form>
+    </div>
+</body>
+</html>

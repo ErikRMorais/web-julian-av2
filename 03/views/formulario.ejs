@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Resistência (Lei de Ohm)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #eef; color: #333; display: flex; justify-content: center; align-items: center; min-height: 90vh; }
+        .container { background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); width: 100%; max-width: 400px; }
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 25px; font-size: 1.8em; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        input[type="number"] { width: calc(100% - 24px); padding: 12px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; font-size: 1em; }
+        input[type="number"]:focus { border-color: #3498db; box-shadow: 0 0 0 0.2rem rgba(52,152,219,.25); outline: none; }
+        button { background-color: #3498db; color: white; padding: 12px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1em; width: 100%; transition: background-color 0.2s ease-in-out; }
+        button:hover { background-color: #2980b9; }
+        .error-message { color: #e74c3c; background-color: #fdd; border: 1px solid #e74c3c; padding: 10px; border-radius: 5px; margin-bottom: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Resistência</h1>
+        <p style="text-align: center; margin-bottom: 20px; color: #7f8c8d;">R = V / I (Lei de Ohm)</p>
+
+        <% if (typeof erro !== 'undefined' && erro) { %>
+            <div class="error-message"><%= erro %></div>
+        <% } %>
+
+        <form action="/calcular-resistencia" method="POST">
+            <div>
+                <label for="tensao">Tensão (Volts - V):</label>
+                <input type="number" id="tensao" name="tensao" step="any" required
+                       value="<%= typeof tensao !== 'undefined' ? tensao : '' %>">
+            </div>
+            <div>
+                <label for="corrente">Corrente (Amperes - A):</label>
+                <input type="number" id="corrente" name="corrente" step="any" required
+                       value="<%= typeof corrente !== 'undefined' ? corrente : '' %>">
+            </div>
+            <button type="submit">Calcular Resistência</button>
+        </form>
+    </div>
+</body>
+</html>

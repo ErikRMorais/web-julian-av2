@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data e Hora Atuais - Sinop, MT</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #3498db;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 1.5em;
+            font-weight: 400;
+        }
+        .datetime {
+            font-size: 1.8em;
+            margin: 15px 0;
+            color: #2980b9;
+        }
+        .datetime strong {
+            display: block;
+            font-size: 0.7em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+        .timezone-info {
+            font-size: 0.9em;
+            color: #95a5a6;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data e Hora Atuais</h1>
+        <h2>Sinop, Mato Grosso</h2>
+
+        <div class="datetime">
+            <strong>Data:</strong>
+            <%= dataFormatada %>
+        </div>
+        <div class="datetime">
+            <strong>Hora:</strong>
+            <%= horaFormatada %>
+        </div>
+
+        <p class="timezone-info">Fuso Horário: <%= fusoHorarioUtilizado %></p>
+        <p class="timezone-info"><small>Página gerada em: <%= new Date().toISOString() %> (UTC)</small></p>
+    </div>
+</body>
+</html>s

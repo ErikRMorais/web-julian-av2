@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Média</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+        .container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 400px; margin: auto; }
+        h1 { text-align: center; color: #007bff; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; }
+        input[type="number"] { width: calc(100% - 22px); padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calcular Média de Quatro Números</h1>
+        <form action="/calcular-media" method="POST">
+            <div>
+                <label for="num1">Número 1:</label>
+                <input type="number" id="num1" name="num1" step="any" required>
+            </div>
+            <div>
+                <label for="num2">Número 2:</label>
+                <input type="number" id="num2" name="num2" step="any" required>
+            </div>
+            <div>
+                <label for="num3">Número 3:</label>
+                <input type="number" id="num3" name="num3" step="any" required>
+            </div>
+            <div>
+                <label for="num4">Número 4:</label>
+                <input type="number" id="num4" name="num4" step="any" required>
+            </div>
+            <button type="submit">Calcular Média</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Resistência</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #eef; color: #333; display: flex; justify-content: center; align-items: center; min-height: 90vh; }
+        .container { background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); width: 100%; max-width: 450px; text-align: center; }
+        h1 { color: #2c3e50; margin-bottom: 25px; font-size: 1.8em; }
+        p { font-size: 1.1em; line-height: 1.6; margin-bottom: 12px; color: #555; }
+        .valor-destaque { font-weight: bold; color: #3498db; font-size: 1.3em; }
+        .formula { font-style: italic; color: #7f8c8d; margin-top: 15px; }
+        a { display: inline-block; margin-top: 25px; padding: 10px 18px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; transition: background-color 0.2s ease-in-out; }
+        a:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resultado do Cálculo</h1>
+        <p>Para uma Tensão de: <span class="valor-destaque"><%= tensaoEntrada.toLocaleString('pt-BR') %> Volts</span></p>
+        <p>E uma Corrente de: <span class="valor-destaque"><%= correnteEntrada.toLocaleString('pt-BR') %> Amperes</span></p>
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+        <p>A Resistência calculada é:</p>
+        <p><span class="valor-destaque" style="font-size: 1.8em;"><%= resistenciaCalculada.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 4 }) %> Ohms (Ω)</span></p>
+        <p class="formula">(R = V / I)</p>
+        <a href="/">Calcular Novamente</a>
+    </div>
+</body>
+</html>
